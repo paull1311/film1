@@ -28,24 +28,33 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(readOnly = true)
-    public void addUser(User user) throws LoginExistsException {
-       if (userDao.findByLogin(user.getLogin())!=null){
-           throw new LoginExistsException(user.getLogin());
-       }
-       user.setPassword(encoder.encode(user.getPassword()));
-       userDao.saveAndFlush(user);
+    public void addUser(User user) {
+        if (userDao.findByLogin(user.getLogin())!=null){
+            try {
+                throw new LoginExistsException(user.getLogin());
+            } catch (LoginExistsException e) {
+                e.printStackTrace();
+            }
+        }
+        user.setPassword(encoder.encode(user.getPassword()));
+        userDao.saveAndFlush(user);
     }
 
     @Override
     @Transactional
-    public void delete(final int id) throws UserNotExistsException {
+    public void delete(final int id) {
         userDao.delete(getById(id));
     }
 
 
     @Override
-    public User getById(final int id) throws UserNotExistsException {
-        return ofNullable(userDao.getOne(id)).orElseThrow(() -> new UserNotExistsException(id));
+    public User getById(final int id)  {
+        try {
+            return ofNullable(userDao.getOne(id)).orElseThrow(() -> new UserNotExistsException(id));
+        } catch (UserNotExistsException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
