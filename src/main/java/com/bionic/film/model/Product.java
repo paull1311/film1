@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 /**
- * Created by leo on 16.04.2016.
+ * Created by Paul.
  */
 @Entity
 public class Product {

@@ -5,7 +5,7 @@ import com.bionic.film.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * Created by leo on 16.04.2016.
+ * Created by Paul.
  */
 public interface ProductDao extends JpaRepository<Product,Integer> {
 }

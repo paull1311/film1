@@ -7,7 +7,7 @@ import com.bionic.film.model.Product;
 import java.util.List;
 
 /**
- * Created by leo on 16.04.2016.
+ * Created by Paul.
  */
 public interface ProductService {
      void addProduct(Product product);

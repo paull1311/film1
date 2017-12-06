@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * Created by leo on 16.04.2016.
+ * Created by Paul.
  */
 @Controller
 @RequestMapping("/products")

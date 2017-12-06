@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
- * Created by leo on 16.04.2016.
+ * Created by Paul.
  */
 @Configuration
 @EnableAutoConfiguration
